@@ -30,9 +30,7 @@ project "Calc"
     includedirs { ".", "./inc", "../CLW" }
     files { "../Calc/**.h", "../Calc/**.cpp",  "../Calc/**.cu"}
     
-    if _OPTIONS["use_opencl"] then
 	links {"CLW"}
-    end
 
     if _OPTIONS["use_hip"] then
         -- filter 'files:**hip.cpp'
@@ -46,11 +44,11 @@ project "Calc"
     end
 
     configuration {"x32", "Debug"}
-        targetdir "../Bin/Debug/x86"
+        targetdir "../../Bin/Debug/x86"
     configuration {"x64", "Debug"}
-        targetdir "../Bin/Debug/x64"
+        targetdir "../../Bin/Debug/x64"
     configuration {"x32", "Release"}
-        targetdir "../Bin/Release/x86"
+        targetdir "../../Bin/Release/x86"
     configuration {"x64", "Release"}
-        targetdir "../Bin/Release/x64"
+        targetdir "../../Bin/Release/x64"
     configuration {}
